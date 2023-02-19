@@ -1,0 +1,117 @@
+
+
+/* - Main - */
+
+main{
+    background-color:#044051;
+	padding: 20px;
+	margin-left: 100px; 
+}
+
+h2,h3{
+    text-align: center;
+}
+
+.picto img {
+	width:70px;
+	position:absolute;
+	display:flex;
+	left:520px;
+	bottom:0;
+	
+}
+.picto{
+position:absolute;
+}
+
+
+img[alt="image1_Les_Audacieuses"]{
+	width:300px;
+	display: block;
+	margin: auto;
+}
+
+section article{
+	background-color:#F6F0F0;
+	margin-right:8px;
+	border-radius: 30px 60px;
+	
+}
+
+p{
+	margin: 20px;
+}
+
+
+p , article h3{
+    padding:10px;
+}
+
+.lignes{      /*lignes décoratives*/
+	content: ""; 
+	border-bottom: 4px solid #000; 
+	margin: auto; 
+}
+
+img[alt="image2_Les_Audacieuses"]{
+	width:200px;
+	margin:10px;
+	float:right;
+}
+
+
+img +p{
+	text-align: justify;
+}
+
+/* tableau */
+
+table{
+	border-width: 3px;
+    border-style:solid;
+    border-color: white;
+    width:100%; 
+    border-collapse: collapse;
+    margin: auto;
+	background-color:#ccc;
+    
+	
+}
+thead{
+    background-color: lightblue;
+    border-width: 2px;
+    border-color:white;
+    border-style:solid;
+    color:black;
+    width:50%; 
+}
+td{
+   color:black;
+   
+   border-width: 2px;
+   border-style:solid;
+   border-color:white;
+   width:50%; 
+}
+table:hover{ 
+	box-shadow: 10px 5px 5px #538FA7;
+}
+
+/* fin du tableau */
+
+video{
+	display: block;
+	margin:auto;
+	margin-top: 20px;
+}
+
+figure{
+	display: inline-block;
+	justify-content: center;
+	width:230px;
+}
+
+
+/*  - Fin du Main - */
+
+

@@ -1,0 +1,93 @@
+
+/* - Main - */
+
+main{
+    
+    background-color:#D66119;
+    padding: 20px;
+	margin-left: 100px;  
+    
+}
+
+h2,h3{
+    text-align: center;
+}
+
+.picto img {
+	width:70px;
+	position:absolute;
+	display:flex;
+	left:530px;
+	bottom:0; 
+	
+}
+.picto{
+position:absolute;
+}
+
+img[alt="image1_Les_Inventrices"]{
+	width:300px;
+	display: block;
+	margin: auto;
+}
+
+
+/* liste à puces*/
+
+.inventions{ /*encadré avec liste des inventions*/
+	margin:20px;
+	text-align: center;
+	font-size: large;
+	border-style: groove;
+	padding-right:20px;
+	position: relative;	
+	background-color:#CFA30D;
+}
+
+.triangle {
+	border:1px solid white;
+	border-color:transparent transparent  transparent white;
+	border-width:40px;
+	position: absolute;	
+}
+
+/* fin  de la liste à puces*/
+
+section article{
+	background-color:#F6F0F0;
+	margin: auto;
+	border-radius:30px; /*bordure arrondit*/
+	
+	
+}
+
+p , article h3{
+    padding:10px; 
+}
+
+img[alt="image2_Les_Inventrices"]{
+	width:176px;
+	margin:10px;
+	float:left;
+	/*image hors du cadre flottant à gauche*/
+}
+.article{
+	
+	margin-left:200px; /*espace pour y placer l'image*/
+
+}
+
+/* formulaire*/
+
+form{
+	background-color: #D96235;
+}
+/* fin du formulaire */
+
+/* - Fin du Main */
+
+
+
+
+
+

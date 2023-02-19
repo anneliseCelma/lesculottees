@@ -1,0 +1,116 @@
+
+/* - Main - */
+
+main{
+    
+    background-color:#F1BA27;
+    padding: 20px;
+    margin-left: 100px; 
+    
+}
+
+h2,h3{
+    text-align: center;
+}
+
+.picto img {
+	width:70px;
+	position:absolute;
+	display:flex;
+	left:520px;
+	bottom:0;
+	
+}
+.picto{
+position:absolute;
+}
+
+img[alt="image1_Les_Rêveuses"]{
+	width:25%;
+	clip-path:ellipse(33% 50%); /*image avec les bords arrondit formant un rond complet*/
+
+	float:left;	
+}
+
+section article{
+    background-color:#F6F0F0;
+	margin-right:8px;	
+}
+
+p , article h3{
+    padding:10px;
+}
+
+
+.article{
+	margin-right:230px;
+}
+
+h3+img{
+    display:block; /*image au centre*/
+    margin:auto;
+}
+
+/* aside 2 */
+
+.videos_tableau{
+	position: relative;
+	
+}
+.mini_tableau{
+	position:absolute;
+	left:50%;
+	top:700px;
+	left:625px;
+}
+.images{
+	position:absolute;
+	left: 580px;
+}
+figure img{
+	width:170px;
+	height:180px;
+}
+figcaption{
+	text-align: center;/*centrer le texte des inmages*/
+}
+/*tableau*/
+table{
+	border-width: 3px;
+    border-style:solid;
+    border-color: white;
+    border-collapse: collapse;
+	background-color:#ccc;
+	width:170px;
+	font-size: 10px;
+	
+}
+thead{
+    background-color: white;
+    border-width: 2px;
+    border-color:white;
+    border-style:solid;
+    color:black;
+    width:100px; 
+}
+td{
+   color:black;
+   
+   border-width: 2px;
+   border-style:solid;
+   border-color:white;
+   width:100px; 
+}
+
+
+a:hover img{
+	opacity: 0.50;
+}
+
+/* fin du aside 2 */
+
+img[alt="image2_Les_Rêveuses"]{
+	width:176px;
+    
+}
+/* - Fin du Main - */

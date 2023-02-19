@@ -1,0 +1,160 @@
+/* - Body - */
+
+body {
+	background-color: black;
+
+}
+.wrap{
+	background-color: white;
+	width:960px;
+	margin:auto;
+}
+
+
+/*- Header - */
+
+header {
+	text-align: center;
+	background-image: url(./../images/salute-respect.gif);
+	background-size: 100%;
+	background-position-y:center;
+}
+header img{
+	display:flex;/*logo en haut à gauche*/ 
+	width:80px;
+}
+
+img+a {
+	text-decoration: none;
+}
+
+h1{
+    font-family: 'Elephant';
+	color:white;
+}
+h1:hover{	/*changement de couleur du titre quand on passe la souris*/
+	color:gold;
+}
+
+/* menu */
+
+.menu{
+	background-color:black;
+	padding:0;
+	justify-content:center; 
+	gap:0.2rem;
+	display:flex;
+}
+
+
+.menu li{
+	display:block;
+	padding:0.5rem;
+	list-style-type: none; /*la liste à puce perd son apparence*/
+	flex-basis: 130px; /*taille des boîtes du menu*/
+	text-align: center;
+	margin:0;
+	background-color: #070708;
+	border-bottom: 3px solid black;
+	margin: 0 0.2rem; /*espace entre les menus*/
+	position:relative;
+	font-family: 'Script MT Gras';
+	font-size: 12pt;
+
+	
+}
+
+.menu li a{
+	color:white;
+	text-decoration: none;
+	
+}
+
+
+.deroulant {
+	background-color:white ;
+	
+}
+.deroulant li:hover{
+	background-color: #dfd7d7;
+}
+
+.deroulant{
+	display:none;
+	background-color: white;
+	position:absolute;
+	width:80%;
+	z-index:1000; /*être sur qu' aucun élément soit au dessus*/
+	margin-top: 10px;
+}
+.menu> li:hover  .deroulant{
+	display:block;
+}
+.deroulant li{
+	width:100%; /*le texte doit remplir toute l'espace du déroulant*/
+	text-align:left; /*le texte du menu derouant aligné à gauche*/
+}
+.deroulant li {
+	padding:10px;
+	border-bottom:none;
+}
+
+/* fin du menu */
+
+/*  - Fin du Header - */
+
+
+/* - Aside - */
+
+div +ul{
+	background-color:white;
+    width: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    position: absolute;
+	margin-top:200px;
+	border:double 3px;
+	box-shadow: 2px 2px 2px black;
+	display: none; /*aside apparaissant seulement quand on passe la souris sur la planète*/	
+
+}
+
+aside ul img{
+	width:20px;
+}
+img[alt="logo_langues"]{
+	width:100px;
+	top:200px;
+	left:25px;
+	clip-path:ellipse(33% 50%);
+	position:absolute;	
+}
+.langues{
+	position:relative;
+}
+.langues:hover +ul{ /*aside qui apparait*/
+	display:block;
+	position:absolute;
+}
+
+/* - Fin du Aside - */
+
+
+/* - Footer - */
+
+footer{
+    
+	background:#ccc;
+	width:100%; /*prend toute l'espcae disponible*/
+	display: flex;
+	
+}
+
+footer ul{
+	display:inline-block;
+}
+footer p{
+	text-align: center;
+}
+
+/* - Fin du Footer - */

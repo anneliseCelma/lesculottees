@@ -1,0 +1,94 @@
+
+/* - Aside - */
+
+div +ul{
+	background-color:white;
+    width: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    position: absolute;
+	margin-top:200px;
+	border:double 3px;
+	box-shadow: 2px 2px 2px black;
+	display: none; /*aside apparaissant seulement quand on passe la souris sur la planète*/	
+
+}
+
+aside ul img{
+	width:20px;
+}
+img[alt="logo_langues"]{
+	width:100px;
+	top:200px;
+	left:25px;
+	clip-path:ellipse(33% 50%);
+	position:absolute;	
+}
+.langues{
+	position:relative;
+}
+.langues:hover +ul{ /*aside qui apparait*/
+	display:block;
+	position:absolute;
+}
+
+/* - Fin du Aside - */
+
+/* - Main - */
+
+.titre{
+	border-style: ridge;
+	background-color:#538FA7;
+}
+
+h2,h3{
+	text-align: center;
+}
+
+/* carrousel */
+
+.slider{
+	background-image: url(./../images/tove.jpg); /*on met une image pour que la section ne reste pas vide*/
+	background-size: 710px;
+	background-repeat: no-repeat; /*eviter un effet mosaique*/
+	width:80%;
+	max-width:600px;/*slider ayant la taille max de 600px*/
+	overflow: hidden;  /*surplus caché*/
+	margin:auto; /*au centre*/
+	margin-top:30px;
+	margin-bottom: 30px;
+
+}
+.slider figure{
+	position:relative;
+	width:500%;
+	margin:0 auto;
+	padding:0;
+	font-size: 0;
+	animation:30s slidy infinite;
+	-webkit-animation:30s slidy infinite; /*chaque animation dure 30s*/
+	display:inline-flex; 
+	height:400px;
+
+}
+.slider figure img{
+	width:20%;
+	height:auto;
+	display:flex;	
+}
+
+@keyframes slidy{ /*définition des séquences de l'animation */ /*vers la gauche*/
+	0% {left:0%;} 
+	20%{left:0%;}
+	25%{left:-100%}
+	45%{left:-100%;}
+	50%{left:-200%;}
+	70%{left:-200%;}
+	75%{left:-300%;}
+	95%{left:-300%;}
+	100%{left:-400%;}
+}
+
+/* fin du carrousel */
+
+/* - Fin du Main */
