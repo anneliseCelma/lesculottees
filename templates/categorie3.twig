@@ -1,0 +1,63 @@
+{% extends "base.twig" %}
+
+{# Ce modèle TWIG n'a pas de contenu, il crée deux blocs (rouge et bleu) vides dans le bloc main.
+   Ces deux blocs sont spécialisés dans les modèles fils #}
+{% block css %}
+<link rel="stylesheet" href="css/categorie3.css">
+{% endblock %}
+{% block main %}
+<section>
+	<h2>{{biographie.titre1}}</h2>
+	<h2>{{biographie.titre1_2}}</h2>
+	<div class="picto">
+		<img src="images/{{ image1.url }}" alt="{{ image1.alt }}">
+	</div>
+	<img src="images/{{ image2.url }}" alt="{{ image2.alt }}">
+	<article>
+		<h3>{{biographie.titre2}}</h3>
+		<p>{{biographie.intro}}</p>
+	</article>
+	<aside>
+		<div class="videos_tableau">
+			<div class="images">
+				{% for element in biographie %}
+				<figure>
+					{% for item in element.list_video %}
+					<a href="{{item.url_video}}"><img src="images/{{ item.url_image }}" alt="{{ item.alt }}"></a>
+					<figcaption>{{item.figcaption}}</figcaption>
+					{% endfor %}
+				</figure>
+				{% endfor %}
+				
+			</div>
+			<table class="mini_tableau">
+				<thead>
+					<tr>
+						<td colspan="2">{{tabinfos.gros_titre}}</td>
+					</tr>
+				</thead>
+				{% for element in tabinfos %}
+				<tr>
+					<td>{{ element.titre }}</td>
+					<td>{{ element.contenu }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</aside>
+	<article class="article">
+		<h3>{{biographie.titre3}}</h3>
+		<p>{{biographie.paragraphe1}}</p>
+	</article>
+	<article class="article">
+		<h3>{{biographie.titre4}}</h3>
+		<img src="images/{{ image6.url }}" alt="{{ image6.alt }}">
+		<p>{{biographie.paragraphe2}}</p>
+		<p>{{biographie.paragraphe3}} </p>
+	</article>
+	<article class="article">
+		<h3>{{biographie.titre5}}</h3>
+		<p>{{biographie.paragraphe4}}</p>
+	</article>
+</section>
+{% endblock main %}

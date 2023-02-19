@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{infos.langues}}">
+<!--
+	Ce fichier HTML sert de base à tous les modèles en héritant.
+	Il contient les éléments qui seront présents sur toutes les pages du site.
+	En particulier les entêtes HTML, les header et footer et éventuellement le menu principal
+-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ base.titre1 }}</title>
+	<link rel="stylesheet" href="css/base.css">
+    {% block css %}
+    {% endblock %}
+
+</head>
+<body>
+	<div class="wrap">
+        <header role="banner">
+            <img src="images/{{ logo.url }}" alt="{{ logo.alt }}">
+            <a href="accueil.php"><h1>{{base.titre1}}</h1></a>
+            <nav role="navigation">
+                <ul class="menu">
+                    <li><a href="{{index.href1}}">{{index.nom1}}</a></li>
+                    {% for element in nav %}
+                    <li class="menu_deroulant">
+                        <a href="{{element.href}}">{{element.nom}}</a>
+                        <ul class="deroulant">
+                            {% for item in element.sous_menu %}
+                            <li><a href="{{item.href_sous}}">{{item.nom_sous}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %}   
+                    <li><a href="{{index.href2}}">{{index.nom2}}</a></li>
+                </ul>
+            </nav>
+        </header>
+        {% block aside %}
+        <aside>
+            <div class="langues">
+                <img src="images/{{ picto_langues.url }}" alt="{{ picto_langues.alt }}">
+            </div>
+            <ul>
+                <li><img src="images/{{ drapeau1.url }}" alt="{{ drapeau1.alt }}"><a href="{{select.français}}" title="Traduire en français">{{select.langue1}}</a></li>
+                <li><img src="images/{{ drapeau2.url }}" alt="{{ drapeau2.alt }}"><a href="{{select.anglais}}" title="Traduire en anglais">{{select.langue2}}</a></li>
+            </ul>
+        </aside>
+        {% endblock aside %}
+	<main role="main">
+		{# Ceci est un commentaire en TWIG #}
+		{# La ligne ci-dessous définit un bloc TWIG avec un contenu par défault.
+			On peut spécialiser dans les modèles fils en remplaçant le contenu par un autre #}
+		{% block main %}
+
+		{% endblock  main %}
+        
+
+	</main>
+	<footer role="contentinfo">
+		{% block footer %}
+        
+		<ul>
+            <li><a href="{{page.href1}}">{{ page.nom1 }}</a></li>
+        </ul>
+        {% for element in footer %}
+        <ul>
+            {% for item in element.liste %}
+        <li><a href="{{item.href}}">{{item.nom}}</a></li>
+        {% endfor %}
+        </ul>
+        {% endfor %}
+
+       
+        <ul>
+            <li><a href="{{page.href2}}">{{ page.nom2 }}</a></li>
+        </ul>
+		{% endblock footer %}
+	</footer>
+</body>
+
+</html>

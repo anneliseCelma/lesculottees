@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{# Ce modèle TWIG n'a pas de contenu, il crée deux blocs (rouge et bleu) vides dans le bloc main.
+   Ces deux blocs sont spécialisés dans les modèles fils #}
+{% block css %}
+<link rel="stylesheet" href="css/theme.css">
+{% endblock %}
+{% block main %}
+<section>
+    <article>
+        <h2>{{theme.titre}}</h2>
+        <p>{{theme.paragraphe}}</p>
+    </article>
+</section>
+{% endblock main %}
+

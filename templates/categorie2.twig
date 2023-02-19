@@ -1,0 +1,56 @@
+{% extends "base.twig" %}
+
+{# Ce modèle TWIG n'a pas de contenu, il crée deux blocs (rouge et bleu) vides dans le bloc main.
+   Ces deux blocs sont spécialisés dans les modèles fils #}
+{% block css %}
+<link rel="stylesheet" href="css/categorie2.css">
+{% endblock %}
+
+
+
+{% block main %}
+<section>
+    <h2>{{biographie.gros_titre}}
+    <h2>{{biographie.gros_titre1_2}}</h2>
+    <div class="picto">
+    <img src="images/{{ image1.url }}" alt="{{ image1.alt }}">
+    </div>
+    <img src="images/{{ image2.url }}" alt="{{ image2.alt }}">
+    <div class="inventions">
+        <div class="triangle"></div>
+        <h4>{{biographie.titre_liste}} :</h4>
+        <ul>
+            {% for inventions in inventions %}
+            <li>
+                <i>{{ inventions.nom }}</i>
+            </li>
+            {% endfor %}
+    </div>
+    
+    <article>
+        <h3>{{biographie.titre1}}</h3>
+        <p>{{biographie.intro}}</p>
+    </article>
+        <img src="images/{{ image3.url }}" alt="{{ image3.alt }}">
+        <article class="article">
+            <h3>{{biographie.titre2}}</h3>
+            <p>{{biographie.paragraphe1}}</p>
+            <p>{{biographie.paragraphe2}}</p>
+        </article>
+    <article>
+        {% if dernier_paragraphe %}
+        <h3>{{biographie.titre3}}</h3>
+        <p>{{biographie.paragraphe3}}</p>
+        {% endif %}
+    </article>
+    <form id="formulaire" type="post" action="{{page.quiz}}">
+        <fieldset>
+            <legend>{{biographie.quiz}}</legend>
+            <input type="radio" name="quiz" checked />{{biographie.reponse1}}
+            <input type="radio" name="quiz" /> {{biographie.reponse2}}<br>
+            <input type="submit" name="valider" value="OK">
+        </fieldset>
+    </form>
+</section>
+{% endblock main %}
+

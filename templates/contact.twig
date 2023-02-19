@@ -1,0 +1,64 @@
+{% extends "base.twig" %}
+
+{# Ce modèle TWIG n'a pas de contenu, il crée deux blocs (rouge et bleu) vides dans le bloc main.
+   Ces deux blocs sont spécialisés dans les modèles fils #}
+{% block css %}
+<link rel="stylesheet" href="css/contact.css">
+{% endblock %}
+{% block main %}
+<section>
+    <article class="art">
+        <h2>{{contact.titre1}}<br>{{contact.titre1_2}}</h2>
+        <h3>{{contact.titre2}}</h3>
+        <div class="formulaire">
+        <form method="post" action="reception.php">
+            <fieldset>
+                <legend>{{form.legende}} </legend>
+                <label for="nom">{{form.info1}}</label><input name="nom" id="nom" type="text">
+                <label for="prenom">{{form.info2}}</label><input name="prenom" id="prenom" type="text"><br>
+                <input type="radio" name="sexe" id="sexe1" checked />Masculin
+                <input type="radio" name="sexe" id="sexe2" />Féminin <br>
+                <label for="date">{{form.info5}}</label><input ,name="naissance" type="date" id="trip-start" value="1970-07-22"
+                    min="1900-01-01" max="2018-12-31"><br>
+                <label for="email">{{form.info6}}</label><input name="email" type="text">
+                <label>{{form.info7}} </label> <textarea name="message" cols="50" rows="10"></textarea>
+                <input type="submit" name="valider" value="Envoyer">
+            </fieldset>
+        </form>
+        </div>
+        <p>Notez notre site :</p>
+        <span class="etoiles"><div>1</div>
+    
+    <span class="etoiles"><div>2</div>
+        
+        <span class="etoiles"><div>3</div>
+            
+            <span class="etoiles"><div>4</div>
+                
+                <span class="etoiles"><div>5</div>
+                </span>
+            </span>
+        </span>
+    </span>
+</span>
+    </article>
+    <article>
+        <h4>{{contact.titre3}}</h4>
+        {% for element in bibliothèque %}
+        <figure>
+            {% for item in element.list_livre %}
+            <img src="images/{{ item.url }}" alt="{{ item.alt }}">
+            <div class='resumé'>
+                <p>{{item.resumé}}</p>
+            </div>
+            <div class="boutton">
+            <a href='{{item.href}}' target="_blank" title="Cliquer ici">{{item.boutton}}</a>
+            </div>
+            {% endfor %}
+        </figure>
+        {% endfor %}
+        
+    </article>
+</section>
+{% endblock main %}
+

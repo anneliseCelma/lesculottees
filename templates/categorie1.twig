@@ -1,0 +1,66 @@
+{% extends "base.twig" %}
+
+{# Ce modèle TWIG n'a pas de contenu, il crée deux blocs (rouge et bleu) vides dans le bloc main.
+   Ces deux blocs sont spécialisés dans les modèles fils #}
+{% block css %}
+<link rel="stylesheet" href="css/categorie1.css">
+{% endblock %}
+
+{% block main %}
+<section>
+	<h2>{{ biographie.titre1}}</h2>
+	<h2>{{biographie.titre1_2}}</h2>
+	<div class="picto">
+		<img src="images/{{ image1.url }}" alt="{{ image1.alt }}">
+	</div>
+	<img src="images/{{ image2.url }}" alt="{{ image2.alt }}">
+	<article>
+		<h3>{{biographie.titre2}}</h3>
+		<p>{{biographie.intro1}}</p>
+	</article>
+	<div class="lignes"></div>
+	<article>
+		<h3>{{biographie.titre3}}</h3>
+		<p>{{biographie.intro2}}</p>
+	</article>
+	<article>
+		<h3>{{biographie.titre4}}</h3>
+		<img src="images/{{ image3.url }}" alt="{{ image3.alt }}">
+		<p>{{biographie.paragraphe1}}</p>
+		<p>{{biographie.paragraphe2}}</p>
+	</article>
+	<div class="lignes"></div>
+	<article>
+		{% if biographie.dernier_paragraphe %}
+		<h3>{{biographie.titre5}}</h3>
+		<p> {{biographie.paragraphe3}}</p>
+		{% endif %}
+
+	</article>
+	<table>	
+		<thead>
+			<tr>
+			<td colspan="2">{{tabinfos.gros_titre}}</td>
+			</tr>
+		</thead>
+		{% for tabinfos in tabinfos %}
+	<tr> 
+		<td>{{ tabinfos.titre }}</td>
+		<td>{{ tabinfos.contenu }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+	<video width="600" controls>
+		<source src="images/{{ video.url }}" alt="{{video.type}}"></video>
+
+	</video>
+
+	<figure>
+		<img src="images/{{ image4.url }}" alt="{{ image4.url }}">
+	</figure>
+	<figure>
+		<img src="images/{{image5.url}}" alt="{{ image5.url }}">
+	</figure>
+</section>
+{% endblock main %}
+
